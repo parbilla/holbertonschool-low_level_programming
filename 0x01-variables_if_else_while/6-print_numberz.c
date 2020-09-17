@@ -11,9 +11,9 @@ int main(void)
 	/* Get the alphabet */
 	int c;
 
-	for (c = 0; c <= 9; c++)
+	for (c = 48; c <= 57; c++)
 	{
-		int putchar(int c);
+		putchar(c);
 	}
 
 	putchar('\n');
