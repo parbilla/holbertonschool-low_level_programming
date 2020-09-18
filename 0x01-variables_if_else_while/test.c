@@ -1,4 +1,3 @@
-#include <stdio.h>
 
 /**
  * main - Entry point
@@ -23,21 +22,25 @@ int main(void)
 					h = e * 10 + f;
 					if (g < h)
 					{
-					putchar(c);
-					putchar(d);
-					putchar(' ');
-					putchar(e);
-					putchar(f);
-					if (c != '9' || d != '8' || e != '9' || f != '9')
-					{
-						putchar(',');
+						putchar(c);
+						putchar(d);
 						putchar(' ');
+						putchar(e);
+						putchar(f);
+						if (c == '9' && d == '8' && e == '9' && f == '9')
+						{
+							putchar('\n');
+						}
+						else
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
-					}
-				}
+				}		
 			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
+
