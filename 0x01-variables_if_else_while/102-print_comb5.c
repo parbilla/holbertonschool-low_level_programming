@@ -28,10 +28,7 @@ int main(void)
 					putchar(' ');
 					putchar(e);
 					putchar(f);
-					if (g == 98 && h == 99)
-					{
-					}
-					else
+					if (g != 98 || h != 99)
 					{
 						putchar(',');
 						putchar(' ');
