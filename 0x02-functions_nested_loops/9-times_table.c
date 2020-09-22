@@ -10,11 +10,11 @@ void times_table(void)
 {
 	int a, b, c, decena, unidad;
 
-	for (a = '0'; a <= '9'; a++)
+	for (a = 0; a <= 9; a++)
 	{
-		for (b = '0'; b <= '9'; b++)
+		for (b = 0; b <= 9; b++)
 		{
-			c = (a - 48) * (b - 48);
+			c = a * b;
 			decena = c / 10;
 			unidad = c % 10;
 			if (decena == 0)
@@ -26,7 +26,7 @@ void times_table(void)
 				_putchar(decena + 48);
 			}
 			_putchar(unidad + 48);
-			if (b < '9')
+			if (b < 9)
 			{
 			_putchar(',');
 			_putchar(' ');
