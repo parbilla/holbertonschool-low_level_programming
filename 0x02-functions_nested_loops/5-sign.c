@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * print_sign - print sign
+ * @n: parameter
+ *
+ * Return: 1 (Success)
+ */
+
 int print_sign(int n)
 {
 	if (n > 0)
@@ -13,7 +20,7 @@ int print_sign(int n)
 		return (-1);
 	}
 	else
-        {
+	{
 		_putchar('0');
 		return (0);
 	}
