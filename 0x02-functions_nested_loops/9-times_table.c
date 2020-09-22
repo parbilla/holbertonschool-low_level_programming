@@ -15,8 +15,8 @@ void times_table(void)
 		for (b = '0'; b <= '9'; b++)
 		{
 			c = (a - 48) * (b - 48);
-			decena = c / 10; // Decenas
-			unidad = c % 10; // Unidades
+			decena = c / 10;
+			unidad = c % 10;
 			if (decena == 0)
 			{
 				_putchar(' ');
