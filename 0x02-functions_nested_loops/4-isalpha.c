@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * _isalpha - define alphabet
+ * @c: parameter
+ *
+ * Return: 1 (Success)
+ */
+
 int _isalpha(int c)
 {
 	if (c >= 65 && c <= 90)
