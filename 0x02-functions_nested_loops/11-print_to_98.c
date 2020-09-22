@@ -19,7 +19,7 @@ void print_to_98(int n)
 			printf("%i", count);
 			if (count != 98)
 			{
-				printf(",");
+				printf(", ");
 			}
 		}
 	}
@@ -30,7 +30,7 @@ void print_to_98(int n)
 			printf("%i", count);
 			if (count != 98)
 			{
-				printf(",");
+				printf(", ");
 			}
 		}
 	}
