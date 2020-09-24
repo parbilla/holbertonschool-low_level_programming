@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _isupper - define uppercase
+ * _isdigit - define digit
  * @c: parameter
  *
  * Return: 1 (Success)
