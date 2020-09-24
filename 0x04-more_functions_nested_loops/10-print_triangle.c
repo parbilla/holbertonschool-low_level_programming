@@ -19,16 +19,16 @@ void print_triangle(int size)
 				_putchar('#');
 				_putchar('\n');
 			}
-		}
-		else
-		{
-			if (a < size - b)
-			{
-				_putchar(' ');
-			}
 			else
 			{
-				_putchar('#');
+				if (a < size - b)
+				{
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar('#');
+				}
 			}
 		}
 	}
