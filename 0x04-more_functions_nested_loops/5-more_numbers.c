@@ -16,7 +16,7 @@ void more_numbers(void)
 		{
 			for (d = '0'; d <= '9'; d++)
 			{
-				if (c != '0' && d < '5')
+				if (c != '0' && d <= '4')
 				{
 					_putchar(c);
 				}
