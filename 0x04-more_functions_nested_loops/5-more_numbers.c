@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
  * more_numbers - prints numbers
@@ -20,7 +20,7 @@ void more_numbers(void)
 				{
 					_putchar(c);
 				}
-			        if (c == '0' || (c == '1' && d <= '4'))
+				if (c == '0' || (c == '1' && d <= '4'))
 				{
 					_putchar(d);
 				}
