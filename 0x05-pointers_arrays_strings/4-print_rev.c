@@ -12,15 +12,18 @@ void print_rev(char *s)
 	char *principio;
 
 	principio = s;
-	while (*s != '\0')
+	if (*s != '\0')
 	{
-		s++;
-	}
-	s--;
-	while (s != principio)
-	{
-		_putchar(*s);
+		while (*s != '\0')
+		{
+			s++;
+		}
 		s--;
+		while (s != principio)
+		{
+			_putchar(*s);
+			s--;
+		}
 	}
 	_putchar(*s);
 	_putchar('\n');
