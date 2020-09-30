@@ -13,7 +13,8 @@ int _atoi(char *s)
 
 	sg = 1;
 	signo = 0;
-
+	inicio = 0;
+	fin = 0;
 	for (len = 0; s[len] != 0; len++)
 	{
 	}
@@ -49,12 +50,12 @@ int _atoi(char *s)
 	largo = fin - inicio;
 	for (j = 0; j < largo; j++)
 	{
-	pot = 1;
-	for (h = j; h < largo - 1; h++)
-	{
-		pot = pot * 10;
-	}
-	resultado += (s[inicio + j] - 48) * pot;
+		pot = 1;
+		for (h = j; h < largo - 1; h++)
+		{
+			pot = pot * 10;
+		}
+		resultado += (s[inicio + j] - 48) * pot;
 	}
 	return (resultado * sg);
 }
