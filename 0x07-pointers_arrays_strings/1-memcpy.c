@@ -9,7 +9,7 @@
  * Return: pointer to dest
  */
 
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char b, unsigned int n)
 {
 	unsigned int i;
 
