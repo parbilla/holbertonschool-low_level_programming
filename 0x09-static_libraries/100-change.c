@@ -1,9 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - change in coins
+ * @argc: count
+ * @argv: change
+ *
+ * Return: result
+ */
+
 int main(int argc, char *argv[])
 {
-	int de25, de10, de5, de2, resto, cents, monedas = 0;
+	int de25, de10, de5, de2, resto, cents, monedas;
+
+	de25 = 0;
+	de10 = 0;
+	de5 = 0;
+	de2 = 0;
+	resto = 0;
+	monedas = 0;
 
 	if (argc != 2)
 	{
