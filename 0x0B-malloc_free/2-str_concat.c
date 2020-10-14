@@ -37,6 +37,7 @@ char *f_strncat(char *dest, char *src)
 int f_strlen(char *str)
 {
 	int len;
+
 	while (*str)
 	{
 		len++;
@@ -47,7 +48,8 @@ int f_strlen(char *str)
 
 /**
  * str_concat - array of chars
- * @str: string
+ * @s1: string
+ * @s2: string
  *
  * Return: always
  */
@@ -69,7 +71,7 @@ char *str_concat(char *s1, char *s2)
 	len1 = f_strlen(s1);
 	len2 = f_strlen(s2);
 
-	new_concat = (char*) malloc((len1 + len2 + 1) * sizeof(char));
+	new_concat = (char *) malloc((len1 + len2 + 1) * sizeof(char));
 
 	if (new_concat == 0)
 	{
