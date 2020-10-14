@@ -60,11 +60,11 @@ char *str_concat(char *s1, char *s2)
 	char *new_concat;
 	int len1, len2;
 
-	if (s1 == 0)
+	if (s1 == NULL)
 	{
 		s1 = "";
 	}
-	if (s2 == 0)
+	if (s2 == NULL)
 	{
 		s2 = "";
 	}
