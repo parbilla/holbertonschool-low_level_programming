@@ -24,6 +24,7 @@ char *f_strncat(char *dest, char *src)
 	{
 		dest[lend + i] = src[i];
 	}
+	dest[lend + lens] = 0;
 	return (dest);
 }
 
