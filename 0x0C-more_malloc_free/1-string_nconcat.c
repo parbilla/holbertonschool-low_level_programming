@@ -36,7 +36,7 @@ char *f_strncat(char *dest, char *src, int n)
  * Return: always
  */
 
-int f_strlen(char *str)
+unsigned int f_strlen(char *str)
 {
 	unsigned int len;
 
