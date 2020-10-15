@@ -6,6 +6,7 @@
  * *f_strncat - concatenate string
  * @src: source
  * @dest: destiny
+ * @n: spaces
  *
  * Return: pointed to dest
  */
