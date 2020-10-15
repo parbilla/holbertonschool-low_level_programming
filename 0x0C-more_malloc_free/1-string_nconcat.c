@@ -11,9 +11,9 @@
  * Return: pointed to dest
  */
 
-char *f_strncat(char *dest, char *src, int n)
+char *f_strncat(char *dest, char *src, unsigned int n)
 {
-	int lend, lens, i;
+	unsigned int lend, lens, i;
 
 	for (lend = 0; dest[lend] != 0; lend++)
 	{
@@ -61,7 +61,7 @@ unsigned int f_strlen(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_concat;
-	unsigned int len1, len2, i;
+	unsigned int len1, len2, i, j;
 
 	if (s1 == NULL)
 	{
@@ -92,6 +92,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		new_concat[i] = s1[i];
 	}
 
-	f_strncat(new_concat, s2, n);
+	for (j = 0; s2[j] != 0 && j < n; j++)
+	{
+		new_concat[i + j] = s2[j];
+	}
+	new_concat[i + j] = 0;
 	return (new_concat);
 }
