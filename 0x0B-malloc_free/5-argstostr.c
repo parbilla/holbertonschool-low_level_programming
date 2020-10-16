@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 	esp = tot + ac;
-	p =(char *)malloc(esp * sizeof(char));
+	p = (char *) malloc(esp * sizeof(char));
 
 	if (p == NULL)
 	{
