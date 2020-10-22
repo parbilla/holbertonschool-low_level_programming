@@ -25,10 +25,12 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 	i = 0;
-	while (i < atoi(argv[1]))
+	while (i < (atoi(argv[1]) - 1))
 	{
 		printf("%02x ", p[i]);
 		i++;
 	}
-	printf("\b\n");
+	i++;
+	printf("%02x\n", p[i]);
+	return (0);
 }
