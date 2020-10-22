@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-	int i;
+	unsigned int i;
 	unsigned char *p = (char *) main;
 
 	if (argc != 2)
