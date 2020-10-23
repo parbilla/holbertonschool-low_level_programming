@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
 		printf("%02x ", p[i]);
 		i++;
 	}
-	i++;
 	printf("%02x\n", p[i]);
 	return (0);
 }
