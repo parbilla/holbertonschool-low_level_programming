@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	char *p = (char *) main;
+	unsigned char *p = (char *) main;
 
 	if (argc != 2)
 	{
