@@ -9,7 +9,7 @@
  * Return: pointer
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int i;
 	char *p = (char *) main;
