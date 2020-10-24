@@ -22,9 +22,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 
 	va_start(lista, n);
-	for (i = 0; i < n - 1; i++)
+	for (i = 0; i < n; i++)
 	{
-		if (separator != NULL)
+		if (separator != NULL && i != n - 1)
 		{
 			printf("%d%s", va_arg(lista, unsigned int), separator);
 		}
@@ -33,7 +33,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			printf("%d", va_arg(lista, unsigned int));
 		}
 	}
-	printf("%d", va_arg(lista, unsigned int));
 	va_end(lista);
 	printf("\n");
 }
