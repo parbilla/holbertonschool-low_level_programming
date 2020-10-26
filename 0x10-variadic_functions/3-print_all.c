@@ -4,101 +4,60 @@
 #include <string.h>
 
 /**
- * struct op - struct print
+ * print_chr - print char
+ * @args: va_list type
  *
- * @c: The operator
- * @f: The function associated
+ * Return: always
  */
-typedef struct op
+
+void print_chr(va_list args)
 {
-	char *c;
-	void (*f)();
-} prt;
+	printf("%c", va_arg(args, int));
+}
 
 /**
- * get_prt - select type
- * @s: char
+ * print_int - print int
+ * @args: va_list type
  *
- * Return: pointer
+ * Return: always
  */
 
-void (*get_prt(char *s))()
+void print_int(va_list args)
 {
-	prt opc[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_fl},
-		{"s", print_str},
-		{NULL, NULL}
-	};
-	int i;
+	printf("%d", va_arg(args, int));
+}
 
-	i = 0;
-	while (opc[i].c != NULL)
+/**
+ * print_flt - print float
+ * @args: va_list args
+ *
+ * Return: always
+ */
+
+void print_flt(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+  * print_str - print string
+  * @args: str
+  *
+  * Return: always
+  */
+
+void print_str(va_list args)
+{
+	char *n;
+
+	n = va_arg(args, char*);
+	if (n == NULL)
 	{
-		if (strcmp(opc[i].c, s) == 0)
-		{
-			return (opc[i].f);
-		}
-		i++;
+		n = "(nil)";
 	}
+	printf("%s", n);
 }
 
-/**
- * print_char - print char
- * @c: char
- *
- * Return: pointer
- */
-
-void print_char(char c)
-{
-	printf(a + b);
-}
-
-/**
- * op_sub - substraction
- * @a: row
- * @b: col
- *
- * Return: pointer
- */
-
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
-
-/**
- * op_mul - multiplication
- * @a: row
- * @b: col
- *
- * Return: pointer
- */
-
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-
-/**
- * op_div - division
- * @a: row
- * @b: col
- *
- * Return: pointer
- */
-
-int op_div(int a, int b)
-{
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (a / b);
-}
 /**
  * print_all - program
  * @format: arguments
@@ -108,37 +67,37 @@ int op_div(int a, int b)
 
 void print_all(const char * const format, ...)
 {
-	va_list lista;
-	char *s;
-	unsigned int i;
+	va_list args;
+	unsigned int i, j;
+	prt opc[] = {
+		{"c", print_chr},
+		{"i", print_int},
+		{"f", print_flt},
+		{"s", print_str},
+		{NULL, NULL}
+	};
 
-	if (n == 0)
-	{
-		return;
-	}
 
-	va_start(lista, n);
-	for (i = 0; i < (n - 1); i++)
+	va_start(args, format);
+	i = 0;
+	while (format[i])
 	{
-		s = va_arg(lista, char *);
-		if (s == NULL)
+		j = 0;
+		while (opc[j].c != NULL)
 		{
-			s = "(nil)";
+			if (format[i] == opc[j].c[0])
+			{
+				opc[j].f(args);
+				if (i != 3)
+				{
+					printf(", ");
+				}
+				break;
+			}
+			j++;
 		}
-		if (separator != NULL)
-		{
-		printf("%s%s", s, separator);
-		}
-		else
-		{
-		printf("%s", s);
-		}
+		i++;
 	}
-	s = va_arg(lista, char *);
-	if (s == NULL)
-	{
-		s = "(nil)";
-	}
-	printf("%s\n", s);
-	va_end(lista);
+	printf("\n");
+	va_end(args);
 }
