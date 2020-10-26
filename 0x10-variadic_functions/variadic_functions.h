@@ -18,8 +18,8 @@ void print_all(const char * const format, ...);
 
 typedef struct op
 {
-        char *c;
-        void (*f)();
+	char *c;
+	void (*f)();
 } prt;
 
 #endif
