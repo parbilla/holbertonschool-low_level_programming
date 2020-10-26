@@ -12,11 +12,11 @@ void print_all(const char * const format, ...);
  * @c: The operator
  * @f: The function associated
  */
+
 typedef struct op
 {
         char *c;
         void (*f)();
 } prt;
-
 
 #endif
