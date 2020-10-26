@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * print_chr - print char
@@ -69,6 +70,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i, j;
+	char *s;
 	prt opc[] = {
 		{"c", print_chr},
 		{"i", print_int},
@@ -79,24 +81,22 @@ void print_all(const char * const format, ...)
 
 
 	va_start(args, format);
+	s = "";
 	i = 0;
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (opc[j].c != NULL)
 		{
 			if (format[i] == opc[j].c[0])
 			{
+				printf("%s", s);
 				opc[j].f(args);
-				if (i != 3)
-				{
-					printf(", ");
-				}
-				break;
+				s = ", ";
 			}
-			j++;
+		j++;
 		}
-		i++;
+	i++;
 	}
 	printf("\n");
 	va_end(args);
