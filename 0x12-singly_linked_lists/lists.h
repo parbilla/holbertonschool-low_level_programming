@@ -1,5 +1,5 @@
-#ifndef LISTS
-#define LISTS
+#ifndef LIST
+#define LIST
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,8 +14,10 @@
 typedef struct node
 {
 	char *str;
-	size_t len;
+	unsigned int len;
 	struct node *next;
 } list_t;
 
 size_t print_list(const list_t *h);
+
+#endif
