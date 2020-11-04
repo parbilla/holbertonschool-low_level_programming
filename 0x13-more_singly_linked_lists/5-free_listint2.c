@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * void free_listint - frees a list.
+ * free_listint - frees a list.
  * @head: pointer to list head
  *
  * Return: void.
@@ -28,6 +28,10 @@ void free_listint(listint_t *head)
 
 void free_listint2(listint_t **head)
 {
+	if (head == NULL)
+	{
+		return;
+	}
 	free_listint(*head);
 	*head = NULL;
 }
