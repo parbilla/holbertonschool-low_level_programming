@@ -20,6 +20,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 			c++;
 		}
 		i = i >> 1;
-       	}
+	}
 	return (c);
 }
