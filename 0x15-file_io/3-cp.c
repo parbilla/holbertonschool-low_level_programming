@@ -44,9 +44,9 @@ int main(int argc, char **argv)
 	}
 	clto = close(fdto);
 	clfr = close(fdfrom);
-	if (clto == -1 || clfr == -1)
-	{
+	if (clto == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", clto), exit(100);
-	}
+	if (clfr == -1)
+                dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", clfr), exit(100);
 	return (0);
 }
