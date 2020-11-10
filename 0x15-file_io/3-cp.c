@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	char *buffer[1024];
 	int leer = 1;
 
-	if (argc != 2)
+	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fdfrom = open(argv[1], O_RDONLY);
 	fdto = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
