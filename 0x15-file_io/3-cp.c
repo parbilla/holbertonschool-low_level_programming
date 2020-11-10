@@ -22,7 +22,7 @@ int main(int argc, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 	}
 	if (fdto == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	while (leer > 0)
 	{
 		leer = read(fdfrom, buffer, 1024);
@@ -36,7 +36,7 @@ int main(int argc, char **av)
 			escr = write(fdto, buffer, leer);
 			if (escr == -1)
 			{
-				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 				exit(99);
 			}
 		}
