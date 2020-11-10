@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	int fdfrom, fdto, escr;
+	int fdfrom, fdto, escr, clto, clfr;
 	char *buffer[1024];
 	int leer = 1;
 
@@ -42,9 +42,9 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-	close(fdto);
-	close(fdfrom);
-	if (fdto == -1 || fdfrom == -1)
+	clto = close(fdto);
+	clfr = close(fdfrom);
+	if (clto == -1 || clfr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE"), exit(100);
 	}
