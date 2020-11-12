@@ -1,1 +1,1 @@
-Variadic functions
+Variadic functions to study
