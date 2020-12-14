@@ -2,7 +2,7 @@
 
 /**
  * insert_dnodeint_at_index - inserts a new node at a given position.
- * @h: pointer to pointer to dlistint_t
+ * @h: double pointer to dlistint_t
  * @idx: index where the new node should be added
  * @n: integer
  *
@@ -19,21 +19,24 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 	{
-		printf("Error: Can't malloc\n");
 		return (NULL);
 	}
 	new->n = n;
-	if (*h == NULL)
+	if (*h == NULL && idx == 0)
 	{
-		if (idx == 0)
-		{
-			*h = new;
-			new->prev = NULL;
-			new->next = NULL;
-			return (new);
-		}
-		return (NULL);
+		*h = new;
+		new->prev = NULL;
+		new->next = NULL;
+		return (new);
 	}
+	else if (idx == 0)
+	{
+		new->prev = NULL;
+		new->next = *h;
+		*h = new;
+	}
+	else if (*h == NULL)
+		return (NULL);
 	aux2 = *h;
 	for (i = 0; i < idx; i++)
 	{
