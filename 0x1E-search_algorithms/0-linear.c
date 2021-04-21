@@ -18,11 +18,24 @@ int linear_search(int *array, size_t size, int value)
 	}
 	for (i = 0; i < size; i++)
 	{
-		printf("Value checked array[%lu] = [%i]\n", i, array[i]);
+		print_check(i, array[i]);
 		if (array[i] == value)
 		{
 			return (i);
 		}
 	}
 	return (-1);
+}
+
+/**
+ * print_check - prints the value checked
+ * @index: index of the array
+ * @integ: value checked
+ *
+ * Return: first index where value is located
+ */
+
+void print_check(size_t index, int integ)
+{
+	printf("Value checked array[%lu] = [%d]\n", index, integ);
 }
