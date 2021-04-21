@@ -22,6 +22,11 @@ int jump_search(int *array, size_t size, int value)
 		print_check(idx, array[idx]);
 		return (-1);
 	}
+	if (array[idx] == value)
+	{
+		print_check(idx, array[idx]);
+		return (idx);
+	}
 	while (array[idx] < value && idx < size)
 	{
 		print_check(idx, array[idx]);
