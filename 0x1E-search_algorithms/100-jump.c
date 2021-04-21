@@ -37,6 +37,14 @@ int jump_search(int *array, size_t size, int value)
 	return (-1);
 }
 
+/**
+ * print_check - prints the value checked
+ * @index: index of the array
+ * @integ: value checked
+ *
+ * Return: first index where value is located
+ */
+
 void print_check(size_t index, int integ)
 {
 	printf("Value checked array[%lu] = [%d]\n", index, integ);
