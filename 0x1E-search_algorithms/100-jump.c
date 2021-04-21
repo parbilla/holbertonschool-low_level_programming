@@ -15,7 +15,7 @@ int jump_search(int *array, size_t size, int value)
 	size_t bloc = sqrt(size);
 	size_t i = 0;
 
-	if (array == 0)
+	if (array == NULL)
 		return (-1);
 	if (array[idx] > value)
 	{
