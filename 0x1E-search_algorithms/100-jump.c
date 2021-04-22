@@ -17,20 +17,19 @@ int jump_search(int *array, size_t size, int value)
 
 	if (array == NULL || size == 0)
 		return (-1);
-	/*
-	*if (array[idx] > value)
-	*{
-	*	print_check(idx, array[idx]);
-	*	return (-1);
-	*}
 	
-	*if (array[idx] == value)
-	*{
-	*	print_check(idx, array[idx]);
-	*	return (idx);
-	*}
-	*/
-	while (array[idx] < value && idx < size)
+	if (array[idx] > value)
+	{
+		print_check(idx, array[idx]);
+		return (-1);
+	}
+	if (array[idx] == value)
+	{
+		print_check(idx, array[idx]);
+		return (idx);
+	}
+	
+	while (idx < size && array[idx] < value)
 	{
 		print_check(idx, array[idx]);
 		idx += bloc;
