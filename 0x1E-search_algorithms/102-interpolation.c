@@ -20,7 +20,8 @@ int interpolation_search(int *array, size_t size, int value)
 		return (-1);
 	if (array[low] > value)
 	{
-		print_check(low, array[low]);
+		/*print_check(low, array[low]);*/
+		printf("Value checked array[%lu] is out of range\n", pos);
 		return (-1);
 	}
 	if (array[low] == value)
